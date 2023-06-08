@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chart.Net Document</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    
+</head>
+<body>
+
+    <div class="container">
+        <div class="title">
+            <h2>
+                Chart.js
+            </h2>
+            <p>
+                Chart.js Simple yet flexible JavaScript 
+                charting library for the modern web
+            </p>
+
+            <p>
+                <pre>
+                1.Let's break this code down.
+
+                First, we need to have a canvas in our page. 
+                It's recommended to give the chart its own 
+                container for responsiveness.
+                <div>
+                    id="myChart"
+                </div>
+
+                2.Now that we have a canvas, we can include Chart.js from a CDN.
+                <div>
+                    src="https://cdn.jsdelivr.net/npm/chart.js"
+                </div>
+
+                3.Finally, we can create a chart. 
+                We add a script that acquires the myChart 
+                canvas element and instantiates new Chart 
+                with desired configuration: bar chart type, 
+                labels, data points, and options.
+                <div>
+
+                    const ctx = document.getElementById('myChart');
+                    
+                    new Chart(ctx, {
+                        type: 'bar',
+                        data: {
+                        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+                        datasets: [{
+                            label: '# of Votes',
+                            data: [12, 19, 3, 5, 2, 3],
+                            borderWidth: 1
+                        }]
+                        },
+                        options: {
+                        scales: {
+                            y: {
+                            beginAtZero: true
+                            }
+                        }
+                        }
+                    });
+                      
+                </div>
+                </pre>
+            </p>
+
+            <p>
+                Chart.js Website <a href="https://www.chartjs.org/docs/latest/">click here</a>,
+                For installation <a href="https://www.chartjs.org/docs/latest/getting-started/installation.html">visit Docs</a>,
+                For integration on different framework <a href="https://www.chartjs.org/docs/latest/getting-started/integration.html">visit here</a>.
+            </p>
+
+            <p>For more resourse to use on your website visit
+                <a href="../website-resources/"> all resourse</a>
+            </p>
+            
+        </div>
+        <div class="content">
+
+            <!-- FIRST ROW -->
+            <div class="row">
+                <div class="chart">
+                    <canvas id="bar"></canvas>
+                </div>
+                <div class="chart">
+                    <canvas id="line"></canvas>
+                </div>
+            </div>
+
+            <!-- SECOND ROW -->
+            <div class="row">
+                <div class="chart">
+                    <canvas id="radar"></canvas>
+                </div>
+                <div class="chart">
+                    <canvas id="polarArea"></canvas>
+                </div>
+            </div>
+
+            <!-- THIRD ROW -->
+            <div class="row">
+                <div class="chart">
+                    <canvas id="doughnut"></canvas>
+                </div>
+                <div class="chart">
+                    <canvas id="pie"></canvas>
+                </div>
+            </div>
+
+            <!-- FORTH ROW -->
+            <div class="row">
+                <div class="chart">
+                    <canvas id="bubble"></canvas>
+                </div>
+                <div class="chart">
+                    <canvas id="scatter"></canvas>
+                </div>
+            </div>
+            <div class="chart">
+                <canvas id="a"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <footer><p>Chart Sample By: <a href="http://bit.ly/abdulsalamamtech" target="_blank" rel="noopener noreferrer">AMTECH</a></p></footer>
+    
+
+
+    <!-- JAVASCRIPT -->
+    <script src="js/jquery-1.10.2.js"></script>
+    <!-- <script>
+        $(document).ready( function () {
+
+        });
+    </script> -->
+    
+      
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <script>
+    const ctx = document.getElementById('bar');
+    const line = document.getElementById('line');
+    const radar = document.getElementById('radar');
+        displayChart(ctx, "bar");
+        displayChart(line, "line");
+        displayChart(radar, "radar");
+
+
+    const polarArea = document.getElementById('polarArea');
+    const doughnut = document.getElementById('doughnut');
+    const pie = document.getElementById('pie');
+        displayChart(polarArea, "polarArea");
+        displayChart(doughnut, "doughnut");
+        displayChart(pie, "pie")
+    
+    const bubble = document.getElementById('bubble');
+    const scatter = document.getElementById('scatter');
+
+        // BUBBLE
+        const bubbledata = {
+            datasets: [{
+                label: 'First Dataset',
+                data: [{
+                x: 20,
+                y: 30,
+                r: 15
+                },{
+                x: 50,
+                y: 20,
+                r: 17
+                },
+                {
+                x: 40,
+                y: 10,
+                r: 10
+                }],
+                backgroundColor: 'rgb(255, 99, 132)'
+            }]
+            };
+        bubbleChart(bubble, bubbledata);
+        function bubbleChart(id, bubbledata){
+                new Chart(id, {
+                    type: 'bubble',
+                    data: bubbledata,
+                    options: {}
+                });
+
+            };
+
+        // SCATTER
+        const scatterdata = {
+            datasets: [{
+                label: 'Scatter Dataset',
+                data: [{
+                x: -10,
+                y: 0
+                }, {
+                x: 0,
+                y: 10
+                }, {
+                x: 10,
+                y: 5
+                }, {
+                x: 0.5,
+                y: 5.5
+                }],
+                backgroundColor: 'rgb(25, 99, 132)'
+            }],
+        };
+        scatterChart(scatter, 'scatter', scatterdata);
+        function scatterChart(id, type, mydata){
+            new Chart(id, {
+                type: type,
+                data: mydata,
+                    options: {
+                    scales: {
+                    x: {
+                        type: 'linear',
+                        position: 'bottom'
+                    }
+                    }
+                }
+            });
+
+        };
+
+        // ALL OTHER CHART
+        // Types: bar, line, ""for circle, Doughnut and Pie Charts
+        function displayChart(id, type){
+
+            new Chart(id, {
+            type: type,
+            data: {
+                labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange', 'gray'],
+                datasets: [{
+                label: type + ' for Votes',
+                data: [12, 19, 3, 15, 2, 3, 1],
+                borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                y: {
+                    beginAtZero: true
+                }
+                },
+                layout: {
+                    padding: 20
+                },
+                plugins: {
+                    legend: {
+                        labels: {
+                            // This more specific font property overrides the global property
+                            font: {
+                                size: 20
+                            }
+                        }
+                    }
+                }
+            }
+            });
+        };
+      
+        const a = document.getElementById('a');
+        displayChart(a, "line")
+      </script>
+</body>
+</html>
