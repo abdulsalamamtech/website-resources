@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>youtube-playlist-downloader Document</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- MANUAL CUSTOMIZE CSS FOR DATATABLE -->
+    <link rel="stylesheet" href="css/style-datatable.css">
+ 
+</head>
+<body>
+    
+    <div class="container">
+        <div class="title">
+            <h2>
+                How to download complete video playlist from YouTube.
+            </h2><br>
+            <p>
+                To download a complete video playlist 
+                from YouTube, you can use a third-party tool 
+                called <strong>youtube-dl</strong>. 
+                Here's how you can do it:
+            </p>
+            
+            <p>
+                <pre>
+                    <br>
+                1. Download and Install youtube-dl software
+
+                LINK
+                (https://github.com/ytdl-org/youtube-dl#installation)
+                <a href="https://github.com/ytdl-org/youtube-dl#installation">visit link</a>
+                
+
+                </pre>
+            </p>
+
+            <p>For more resourse to use on your website visit
+                <a href="../website-resources/"> all resourse</a>
+            </p>
+            
+        </div>
+        <div class="content" style="line-height: 2;">
+            <pre>
+                1. Install youtube-dl: Start by installing youtube-dl 
+                on your computer. You can find installation instructions 
+                for various operating systems on the official youtube-dl 
+                website (https://github.com/ytdl-org/youtube-dl#installation).
+
+                <br>
+                2. Obtain the playlist URL: Go to the YouTube playlist you 
+                want to download and copy the URL from the address bar of your 
+                browser. In this case, the URL is "https://www.youtube.com/playlist?list=PL_99hMDlL4d0iIf0aji2kc4_e8VleaFw2".
+
+                <br>
+                3. Open the command-line interface: Open the command-line 
+                interface or terminal on your computer.
+
+                <br>
+                4. Run the youtube-dl command: In the command-line 
+                interface, run the following command:
+                <code>
+                    ```
+                    youtube-dl -f bestvideo+bestaudio --yes-playlist <playlist_url>
+
+                    ```
+                </code>
+
+                Replace `<playlist_url>` with the URL of the 
+                    playlist you copied earlier. The `-f bestvideo+bestaudio` 
+                    option ensures that the best available video and audio quality is downloaded.
+
+                <br>
+                5. Start the download: Hit Enter to run the command. youtube-dl 
+                will start downloading the videos from the playlist. It will 
+                display progress information and the file names as the download progresses.
+
+                By default, youtube-dl will save the downloaded videos 
+                in the current working directory. You can specify a different 
+                output directory using the `-o` option followed by the desired path.
+
+                Please note that downloading videos from YouTube may be subject 
+                to YouTube's terms of service and copyright restrictions. 
+                Make sure you comply with the applicable laws and respect 
+                the content creators' rights.
+            </pre>
+        </div>
+    </div>
+
+    <footer><p>youtube-playlist-downloader Sample By: <a href="http://bit.ly/abdulsalamamtech" target="_blank" rel="noopener noreferrer">AMTECH</a></p></footer>
+    
+    <script src="js/jquery-1.10.2.js"></script>
+
+</body>
+</html>

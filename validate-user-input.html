@@ -1,0 +1,43 @@
+
+$str = "<h2>/MyAmtech\ /@Diital\\| /#Net\ \$Works$ \n\"Nig' ^gria^
+          <script>alert('hello world')</script>
+        </h2><br>";
+// echo htmlspecialchars($str);
+echo "<br>";
+// echo htmlspecialchars_decode($str);
+// echo htmlentities($str);
+echo "<br>";
+// echo html_entity_decode($str);
+// echo "<br>";
+// echo nl2br($str);
+// echo "<br>";
+// echo $mystr = strilize_input($str);
+// echo "<br>";
+// echo $ourstr = strilize_input($mystr);
+// echo "<br>";
+// echo stripcslashes($str);
+// echo "<br>";
+// echo stripslashes($str);
+// echo "<br>";
+// echo "<br>";
+
+function valid_input($str){
+  // $str = trim($str);
+  $str = stripcslashes($str);
+  $str = stripslashes($str);
+  $str = htmlentities(htmlspecialchars($str));
+  return $str;
+}
+
+echo "STEMLAB";
+
+echo "<h2>" . valid_input($str) . "</h2>";
+echo "<br>";
+
+function valid_output($str){
+  $str = htmlspecialchars_decode(html_entity_decode($str));
+  return $str;
+}
+echo "<h2>" . valid_output($str) . "</h2>";
+echo "<br>";
+
