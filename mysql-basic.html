@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MySQL Basics Document</title>
+</head>
+<body>
+    <pre>
+        Sure! I'd be happy to help you learn the basics of MySQL. Let's start with the fundamental concepts and commands:
+
+1. Introduction to MySQL:
+   - MySQL is an open-source relational database management system (RDBMS) that allows you to store, manage, and retrieve structured data.
+   - It uses a client-server architecture, where the MySQL server handles data storage and retrieval, and clients interact with the server to perform operations on the data.
+
+2. Connecting to MySQL:
+   - To connect to the MySQL server, you can use command-line tools or graphical user interfaces (GUIs) like phpMyAdmin.
+   - For command-line access, use the following command:
+     ```
+     mysql -u username -p
+     ```
+     Replace "username" with your MySQL username. You'll be prompted to enter the password.
+
+3. Creating a Database:
+   - Use the `CREATE DATABASE` statement to create a new database.
+   ```
+   CREATE DATABASE database_name;
+   ```
+
+4. Selecting a Database:
+   - Use the `USE` statement to select a specific database for further operations.
+   ```
+   USE database_name;
+   ```
+
+5. Creating a Table:
+   - Use the `CREATE TABLE` statement to define a new table structure.
+   ```
+   CREATE TABLE table_name (
+     column1 datatype constraints,
+     column2 datatype constraints,
+     ...
+   );
+   ```
+
+6. Inserting Data into a Table:
+   - Use the `INSERT INTO` statement to add data into a table.
+   ```
+   INSERT INTO table_name (column1, column2, ...)
+   VALUES (value1, value2, ...);
+   ```
+
+7. Retrieving Data from a Table:
+   - Use the `SELECT` statement to retrieve data from one or more tables.
+   ```
+   SELECT column1, column2, ...
+   FROM table_name;
+   ```
+
+8. Updating Data in a Table:
+   - Use the `UPDATE` statement to modify existing data in a table.
+   ```
+   UPDATE table_name
+   SET column1 = value1, column2 = value2, ...
+   WHERE condition;
+   ```
+
+9. Deleting Data from a Table:
+   - Use the `DELETE FROM` statement to remove data from a table.
+   ```
+   DELETE FROM table_name
+   WHERE condition;
+   ```
+
+10. Basic Query Clauses:
+   - `WHERE`: Allows you to specify conditions for selecting, updating, or deleting data.
+   - `ORDER BY`: Sorts the result set based on specified columns.
+   - `LIMIT`: Limits the number of rows returned in a query result.
+   - `GROUP BY`: Groups the result set based on specified columns.
+   - `JOIN`: Combines rows from multiple tables based on a related column between them.
+
+These are just the basics to get started with MySQL. As you progress, you can explore more advanced topics such as indexes, views, stored procedures, and transactions. It's also helpful to refer to the official MySQL documentation (https://dev.mysql.com/doc/) for detailed explanations and examples.
+
+Remember to practice and experiment with MySQL to reinforce your learning. Feel free to ask more specific questions as you delve into different aspects of MySQL.
+    </pre>
+</body>
+</html>
